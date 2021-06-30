@@ -1,0 +1,21 @@
+{% set title = "관리자 리스트" %}
+{% extends "layout/base.html" %}
+ 
+{% block content -%}
+
+{% if not user %}
+    로그인 <br />
+    회원가입 <br />
+{% else %}
+    {{ user.id }}님 반갑습니다 | 
+    로그아웃 <br />
+{% endif %}
+
+<br /><br />
+
+    <form action="" method="post">
+        아이디 : <input type="text" name="id"> <br /><br />
+        패스워드 : <input type="password" name="password"> <br /><br />
+        <button>전송</button>
+    </form>
+{% endblock %}
